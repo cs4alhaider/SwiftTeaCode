@@ -1,0 +1,32 @@
+{
+  "description" : "",
+  "name" : "MySwift UI",
+  "expanders" : [
+    {
+      "name" : "Table View",
+      "is_enabled" : true,
+      "description" : "Create a table view \n\n> table tableView",
+      "supported_languages" : [
+        "swift"
+      ],
+      "pattern" : "table ${name:word}",
+      "output_template" : "fileprivate lazy var ${name}: UITableView = {\n        let table = UITableView()\n        table.delegate = self\n        table.dataSource = self\n        table.separatorStyle = .none#\n        table.register(<#TableViewCell#>.self, forCellReuseIdentifier: self.<#cellID#>)\n        table.translatesAutoresizingMaskIntoConstraints = false\n        return table\n    }()\n    ",
+      "identifier" : ""
+    },
+    {
+      "name" : "Label",
+      "is_enabled" : true,
+      "description" : "Create Label \n\n> - label title",
+      "supported_languages" : [
+        "swift"
+      ],
+      "pattern" : "label ${name:word}",
+      "output_template" : "fileprivate lazy var ${name}: UILabel = {\n        let label = UILabel()#\n        label.text = <#String#>\n        label.textColor = <#Color#>\n        label.textAlignment = NSTextAlignment.<#center#>\n        label.font = UIFont.systemFont(ofSize: <#Int#>)\n        label.numberOfLines = <#Int#>\n        label.translatesAutoresizingMaskIntoConstraints = false\n        return label\n    }()",
+      "identifier" : ""
+    }
+  ],
+  "supported_languages" : [
+    "any"
+  ],
+  "is_enabled" : true
+}
