@@ -23,6 +23,17 @@
       "pattern" : "label ${name:word}",
       "output_template" : "fileprivate lazy var ${name}: UILabel = {\n        let label = UILabel()#\n        label.text = <#String#>\n        label.textColor = <#Color#>\n        label.textAlignment = NSTextAlignment.<#center#>\n        label.font = UIFont.systemFont(ofSize: <#Int#>)\n        label.numberOfLines = <#Int#>\n        label.translatesAutoresizingMaskIntoConstraints = false\n        return label\n    }()",
       "identifier" : ""
+    },
+    {
+      "name" : "Button",
+      "is_enabled" : true,
+      "description" : "Creating button with action\n\n> - button open",
+      "supported_languages" : [
+        "swift"
+      ],
+      "pattern" : "button ${name:word}",
+      "output_template" : "fileprivate lazy var ${name}Button: UIButton = {\n        let buttton = UIButton()#\n        buttton.setTitle(<#String#>, for: .normal)\n        buttton.titleLabel?.font = UIFont.systemFont(ofSize: <#Int#>)\n        buttton.setTitleColor(<#titleColor#>, for: .normal)\n        buttton.backgroundColor = <#backgroundColor#>\n        buttton.layer.cornerRadius = <#Int#>\n        buttton.translatesAutoresizingMaskIntoConstraints = false\n        buttton.addTarget(self, action: #selector(${name}ButtonAction(_:)), for: .touchUpInside)\n        return buttton\n    }()\n    \n    @objc fileprivate func ${name}ButtonAction(_ sender: UIButton) {\n        <#Code#>\n    }",
+      "identifier" : ""
     }
   ],
   "supported_languages" : [
