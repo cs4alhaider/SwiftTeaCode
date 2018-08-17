@@ -1,6 +1,6 @@
 {
   "description" : "",
-  "name" : "MySwift UI",
+  "name" : "MySwiftUI",
   "expanders" : [
     {
       "name" : "Table View",
@@ -14,6 +14,17 @@
       "identifier" : ""
     },
     {
+      "name" : "view",
+      "is_enabled" : true,
+      "description" : "Creating view \n\n> - view borderLine",
+      "supported_languages" : [
+        "swift"
+      ],
+      "pattern" : "view ${name:word}",
+      "output_template" : "fileprivate lazy var ${name}View: UIView = {\n        let view = UIView()\n        view.backgroundColor = #<#color#>\n        view.alpha = <#Int#>\n        view.layer.cornerRadius = <#Int#>\n        view.translatesAutoresizingMaskIntoConstraints = false\n        return view\n    }()",
+      "identifier" : ""
+    },
+    {
       "name" : "Label",
       "is_enabled" : true,
       "description" : "Create Label \n\n> - label title",
@@ -21,7 +32,7 @@
         "swift"
       ],
       "pattern" : "label ${name:word}",
-      "output_template" : "fileprivate lazy var ${name}: UILabel = {\n        let label = UILabel()#\n        label.text = <#String#>\n        label.textColor = <#Color#>\n        label.textAlignment = NSTextAlignment.<#center#>\n        label.font = UIFont.systemFont(ofSize: <#Int#>)\n        label.numberOfLines = <#Int#>\n        label.translatesAutoresizingMaskIntoConstraints = false\n        return label\n    }()",
+      "output_template" : "fileprivate lazy var ${name}: UILabel = {\n        let label = UILabel()#\n        label.text = <#String#>\n        label.textColor = <#Color#>\n        label.textAlignment = NSTextAlignment.<#center#>\n        label.font = UIFont.systemFont(ofSize: <#Int#>)\n        label.numberOfLines = <#Int#>\n        label.adjustsFontSizeToFitWidth = true\n        \/\/label.sizeToFit()\n        label.translatesAutoresizingMaskIntoConstraints = false\n        return label\n    }()",
       "identifier" : ""
     },
     {
@@ -33,6 +44,17 @@
       ],
       "pattern" : "button ${name:word}",
       "output_template" : "fileprivate lazy var ${name}Button: UIButton = {\n        let buttton = UIButton()#\n        buttton.setTitle(<#String#>, for: .normal)\n        buttton.titleLabel?.font = UIFont.systemFont(ofSize: <#Int#>)\n        buttton.setTitleColor(<#titleColor#>, for: .normal)\n        buttton.backgroundColor = <#backgroundColor#>\n        buttton.layer.cornerRadius = <#Int#>\n        buttton.translatesAutoresizingMaskIntoConstraints = false\n        buttton.addTarget(self, action: #selector(${name}ButtonAction(_:)), for: .touchUpInside)\n        return buttton\n    }()\n    \n    @objc fileprivate func ${name}ButtonAction(_ sender: UIButton) {\n        <#Code#>\n    }",
+      "identifier" : ""
+    },
+    {
+      "name" : "StackView",
+      "is_enabled" : true,
+      "description" : "Creating a Stack view\n\n> - stack v",
+      "supported_languages" : [
+        "swift"
+      ],
+      "pattern" : "stack ${name:word}",
+      "output_template" : "fileprivate lazy var ${name}StackView: UIStackView = {\n        let stack = UIStackView()#\n        stack.distribution = UIStackViewDistribution.<#distribution#>\n        stack.axis = <#.vertical or .horizontal#>\n        stack.spacing = <#Int#>\n        stack.alpha = 1\n        stack.translatesAutoresizingMaskIntoConstraints = false\n        return stack\n    }()",
       "identifier" : ""
     }
   ],
