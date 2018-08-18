@@ -32,7 +32,7 @@
         "swift"
       ],
       "pattern" : "label ${name:word}",
-      "output_template" : "fileprivate lazy var ${name}: UILabel = {\n        let label = UILabel()#\n        label.text = <#String#>\n        label.textColor = <#Color#>\n        label.textAlignment = NSTextAlignment.<#center#>\n        label.font = UIFont.systemFont(ofSize: <#Int#>)\n        label.numberOfLines = <#Int#>\n        label.adjustsFontSizeToFitWidth = true\n        \/\/label.sizeToFit()\n        label.translatesAutoresizingMaskIntoConstraints = false\n        return label\n    }()",
+      "output_template" : "fileprivate lazy var ${name}Label: UILabel = {\n        let label = UILabel()#\n        label.text = <#String#>\n        label.textColor = <#Color#>\n        label.textAlignment = NSTextAlignment.<#center#>\n        label.font = UIFont.systemFont(ofSize: <#Int#>)\n        label.numberOfLines = <#Int#>\n        label.adjustsFontSizeToFitWidth = true\n        \/\/label.sizeToFit()\n        label.translatesAutoresizingMaskIntoConstraints = false\n        return label\n    }()",
       "identifier" : ""
     },
     {
@@ -55,6 +55,39 @@
       ],
       "pattern" : "stack ${name:word}",
       "output_template" : "fileprivate lazy var ${name}StackView: UIStackView = {\n        let stack = UIStackView()#\n        stack.distribution = UIStackViewDistribution.<#distribution#>\n        stack.axis = <#.vertical or .horizontal#>\n        stack.spacing = <#Int#>\n        stack.alpha = 1\n        stack.translatesAutoresizingMaskIntoConstraints = false\n        return stack\n    }()",
+      "identifier" : ""
+    },
+    {
+      "name" : "Text Field",
+      "is_enabled" : true,
+      "description" : "Creating a text field\n\n> - textField name",
+      "supported_languages" : [
+        "swift"
+      ],
+      "pattern" : "textField ${name:word}",
+      "output_template" : "fileprivate lazy var ${name}TextField: UITextField = {\n        let textField = UITextField()#\n        textField.delegate = self\n        \/\/textField.text = \"${name}TextField\"\n        textField.textColor = .black\n        textField.textAlignment = .natural\n        textField.borderStyle = .none\n        textField.placeholder = \"${name}TextField placeholder\"\n        textField.font = UIFont.systemFont(ofSize: <#Int#>)\n        textField.minimumFontSize = <#Int#>\n        textField.layer.cornerRadius = <#Int#>\n        textField.backgroundColor = <#UIColor#>\n        textField.clearButtonMode = .always\n        textField.adjustsFontSizeToFitWidth = true\n        textField.translatesAutoresizingMaskIntoConstraints = false\n        return textField\n    }()",
+      "identifier" : ""
+    },
+    {
+      "name" : "Text View",
+      "is_enabled" : true,
+      "description" : "Ceating a text view\n\n> - textView story",
+      "supported_languages" : [
+        "swift"
+      ],
+      "pattern" : "textView ${name:word}",
+      "output_template" : "fileprivate lazy var ${name}TextView: UITextView = { #\n        let textView = UITextView()\n        textView.delegate = self\n        \/\/textView.text = \"${name}TextView\"\n        textView.textColor = <#UIColor#>\n        textView.backgroundColor = <#UIColor#>\n        textView.textAlignment = .natural\n        textView.isEditable = true\n        textView.isSelectable = true\n        textView.font = UIFont.systemFont(ofSize: <#Int#>)\n        textView.layer.cornerRadius = <#Int#>\n        textView.translatesAutoresizingMaskIntoConstraints = false\n        return textView\n    }()",
+      "identifier" : ""
+    },
+    {
+      "name" : "Image view",
+      "is_enabled" : true,
+      "description" : "Creating UIImageView \n\n> - imageView logo",
+      "supported_languages" : [
+        "swift"
+      ],
+      "pattern" : "imageView ${name:word}",
+      "output_template" : "fileprivate lazy var ${name}ImageView: UIImageView = { #\n        let image = UIImageView()\n        image.image = UIImage(named: <#String#>)\n        image.clipsToBounds = true\n        image.contentMode = <#.scaleAspectFill#>\n        image.layer.borderColor = <#UIColor.clear.cgColor#>\n        image.layer.borderWidth = <#0#>\n        image.layer.cornerRadius = <#Int#>\n        image.translatesAutoresizingMaskIntoConstraints = false\n        return image\n    }()",
       "identifier" : ""
     }
   ],

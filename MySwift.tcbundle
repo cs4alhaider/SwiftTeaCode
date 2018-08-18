@@ -1,0 +1,21 @@
+{
+  "description" : "",
+  "name" : "MySwift",
+  "expanders" : [
+    {
+      "name" : "Spaces",
+      "is_enabled" : true,
+      "description" : "Adding empty lines \n\n> - lines",
+      "supported_languages" : [
+        "any"
+      ],
+      "pattern" : "lines",
+      "output_template" : "#\n\n\/\/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\/\/",
+      "identifier" : ""
+    }
+  ],
+  "supported_languages" : [
+    "any"
+  ],
+  "is_enabled" : true
+}

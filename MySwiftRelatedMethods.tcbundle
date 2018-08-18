@@ -1,0 +1,43 @@
+{
+  "description" : "",
+  "name" : "MySwiftRelatedMethods",
+  "expanders" : [
+    {
+      "name" : "Table view related methos",
+      "is_enabled" : true,
+      "description" : "Table view related methods \n\n> - tablem",
+      "supported_languages" : [
+        "any"
+      ],
+      "pattern" : "tablem",
+      "output_template" : "\n\/\/ MARK: - TableViewDelegate #\nextension <#class#>: UITableViewDelegate {\n    \n    func numberOfSections(in tableView: UITableView) -> Int {\n        return <#Int#>\n    }\n    \n    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {\n        switch section {\n        case 0:\n            return <#code#>\n        default:\n            return 1\n        }\n    }\n    \n    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {\n        return <#code#>\n    }\n    \n    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {\n        return <#code#>\n    }\n    \n    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {\n        return <#code#>\n    }\n        \n    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {\n        tableView.deselectRow(at: indexPath, animated: true)\n    }\n}\n\n\n\/\/\n\/\/ MARK: - UITableViewDataSource\nextension <#class#>: UITableViewDataSource {\n    \n    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {\n        switch indexPath.section {\n        case 0:\n            guard let cell = tableView.dequeueReusableCell(withIdentifier: <#cellID#>, for: indexPath) as? <#classTableViewCell#> else {\n                return UITableViewCell()\n            }\n            \/\/ cell.\n            return cell\n            \n        default:\n            return UITableViewCell()\n        }\n    }\n    \n    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {\n        switch section {\n        case 0:\n            return <#code#>\n        default:\n            return nil\n        }\n    }\n    \n    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {\n        switch section {\n        case 0:\n            return <#code#>\n        default:\n            return nil\n        }\n    }\n    \n    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {\n        switch section {\n        case 0:\n            return <#code#>\n        default:\n            return nil\n        }\n    }\n    \n    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {\n        switch section {\n        case 0:\n            return <#code#>\n        default:\n            return nil\n        }\n    }\n}\n\/\/",
+      "identifier" : ""
+    },
+    {
+      "name" : "Text Field related methods",
+      "is_enabled" : true,
+      "description" : "Adding textField related methods\n\n> - textFieldm",
+      "supported_languages" : [
+        "swift"
+      ],
+      "pattern" : "textFieldm",
+      "output_template" : "\/\/ MARK: - UITextFieldDelegate#\nextension <#class#>: UITextFieldDelegate {\n    \n\/\/    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textFieldDidBeginEditing(_ textField: UITextField) {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textFieldDidEndEditing(_ textField: UITextField) {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textFieldShouldClear(_ textField: UITextField) -> Bool {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textFieldShouldReturn(_ textField: UITextField) -> Bool {\n\/\/        <#code#>\n\/\/    }\n}",
+      "identifier" : ""
+    },
+    {
+      "name" : "Text View related methods",
+      "is_enabled" : true,
+      "description" : "Adding text view related methods\n\n> - textViewm",
+      "supported_languages" : [
+        "swift"
+      ],
+      "pattern" : "textViewm",
+      "output_template" : "\/\/ MARK: - UITextViewDelegate #\nextension <#class#>: UITextViewDelegate {\n    \n\/\/    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textViewDidBeginEditing(_ textView: UITextView) {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textViewDidEndEditing(_ textView: UITextView) {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textViewDidChange(_ textView: UITextView) {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textViewDidChangeSelection(_ textView: UITextView) {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {\n\/\/        <#code#>\n\/\/    }\n\/\/\n\/\/    func textView(_ textView: UITextView, shouldInteractWith textAttachment: NSTextAttachment, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {\n\/\/        <#code#>\n\/\/    }\n}",
+      "identifier" : ""
+    }
+  ],
+  "supported_languages" : [
+    "any"
+  ],
+  "is_enabled" : true
+}
